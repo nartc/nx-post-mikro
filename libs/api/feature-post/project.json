@@ -1,0 +1,34 @@
+{
+  "root": "libs/api/feature-post",
+  "sourceRoot": "libs/api/feature-post/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/feature-post",
+        "tsConfig": "libs/api/feature-post/tsconfig.lib.json",
+        "packageJson": "libs/api/feature-post/package.json",
+        "main": "libs/api/feature-post/src/index.ts",
+        "assets": ["libs/api/feature-post/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/feature-post/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/feature-post"],
+      "options": {
+        "jestConfig": "libs/api/feature-post/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}

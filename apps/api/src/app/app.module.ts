@@ -4,6 +4,7 @@ import { AutomapperModule } from '@automapper/nestjs';
 import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
 import { ApiFeatureConfigModule } from '@nx-post/api/feature-config';
+import { ApiFeaturePostModule } from '@nx-post/api/feature-post';
 import { DbConfig, dbConfig } from '@nx-post/api/utils-config';
 
 @Module({
@@ -28,6 +29,7 @@ import { DbConfig, dbConfig } from '@nx-post/api/utils-config';
       }),
     }),
     ApiFeatureConfigModule,
+    ApiFeaturePostModule,
   ],
 })
 export class AppModule {}

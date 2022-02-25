@@ -15,7 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-post/api/data-access-post": [
+        "libs/api/data-access-post/src/index.ts"
+      ],
       "@nx-post/api/feature-config": ["libs/api/feature-config/src/index.ts"],
+      "@nx-post/api/feature-post": ["libs/api/feature-post/src/index.ts"],
+      "@nx-post/api/shared-data-access-entities": [
+        "libs/api/shared-data-access-entities/src/index.ts"
+      ],
       "@nx-post/api/utils-config": ["libs/api/utils-config/src/index.ts"]
     }
   },

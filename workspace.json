@@ -2,7 +2,10 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "api-data-access-post": "libs/api/data-access-post",
     "api-feature-config": "libs/api/feature-config",
+    "api-feature-post": "libs/api/feature-post",
+    "api-shared-data-access-entities": "libs/api/shared-data-access-entities",
     "api-utils-config": "libs/api/utils-config"
   }
 }
