@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-post/api/data-access-auth": [
+        "libs/api/data-access-auth/src/index.ts"
+      ],
       "@nx-post/api/data-access-comment": [
         "libs/api/data-access-comment/src/index.ts"
       ],
@@ -24,6 +27,7 @@
       "@nx-post/api/data-access-user": [
         "libs/api/data-access-user/src/index.ts"
       ],
+      "@nx-post/api/feature-auth": ["libs/api/feature-auth/src/index.ts"],
       "@nx-post/api/feature-comment": ["libs/api/feature-comment/src/index.ts"],
       "@nx-post/api/feature-config": ["libs/api/feature-config/src/index.ts"],
       "@nx-post/api/feature-post": ["libs/api/feature-post/src/index.ts"],

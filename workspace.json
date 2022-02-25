@@ -2,9 +2,11 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "api-data-access-auth": "libs/api/data-access-auth",
     "api-data-access-comment": "libs/api/data-access-comment",
     "api-data-access-post": "libs/api/data-access-post",
     "api-data-access-user": "libs/api/data-access-user",
+    "api-feature-auth": "libs/api/feature-auth",
     "api-feature-comment": "libs/api/feature-comment",
     "api-feature-config": "libs/api/feature-config",
     "api-feature-post": "libs/api/feature-post",

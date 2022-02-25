@@ -1,0 +1,34 @@
+{
+  "root": "libs/api/data-access-auth",
+  "sourceRoot": "libs/api/data-access-auth/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/data-access-auth",
+        "tsConfig": "libs/api/data-access-auth/tsconfig.lib.json",
+        "packageJson": "libs/api/data-access-auth/package.json",
+        "main": "libs/api/data-access-auth/src/index.ts",
+        "assets": ["libs/api/data-access-auth/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/data-access-auth/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/data-access-auth"],
+      "options": {
+        "jestConfig": "libs/api/data-access-auth/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}
