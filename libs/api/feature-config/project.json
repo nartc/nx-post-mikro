@@ -1,0 +1,33 @@
+{
+  "root": "libs/api/feature-config",
+  "sourceRoot": "libs/api/feature-config/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/feature-config",
+        "tsConfig": "libs/api/feature-config/tsconfig.lib.json",
+        "main": "libs/api/feature-config/src/index.ts",
+        "assets": ["libs/api/feature-config/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/feature-config/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/feature-config"],
+      "options": {
+        "jestConfig": "libs/api/feature-config/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}

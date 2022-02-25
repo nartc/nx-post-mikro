@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-post/api/feature-config": ["libs/api/feature-config/src/index.ts"],
+      "@nx-post/api/utils-config": ["libs/api/utils-config/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

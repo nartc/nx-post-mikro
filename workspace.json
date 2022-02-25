@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "api": "apps/api"
+    "api": "apps/api",
+    "api-feature-config": "libs/api/feature-config",
+    "api-utils-config": "libs/api/utils-config"
   }
 }
