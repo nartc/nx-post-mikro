@@ -1,0 +1,34 @@
+{
+  "root": "libs/api/feature-comment",
+  "sourceRoot": "libs/api/feature-comment/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/feature-comment",
+        "tsConfig": "libs/api/feature-comment/tsconfig.lib.json",
+        "packageJson": "libs/api/feature-comment/package.json",
+        "main": "libs/api/feature-comment/src/index.ts",
+        "assets": ["libs/api/feature-comment/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/feature-comment/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/feature-comment"],
+      "options": {
+        "jestConfig": "libs/api/feature-comment/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}

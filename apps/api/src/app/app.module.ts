@@ -3,8 +3,16 @@ import { mikro } from '@automapper/mikro';
 import { AutomapperModule } from '@automapper/nestjs';
 import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
+import { ApiFeatureCommentModule } from '@nx-post/api/feature-comment';
 import { ApiFeatureConfigModule } from '@nx-post/api/feature-config';
 import { ApiFeaturePostModule } from '@nx-post/api/feature-post';
+import { ApiFeatureUserModule } from '@nx-post/api/feature-user';
+import {
+  BaseProfile,
+  CommentProfile,
+  PostProfile,
+  UserProfile,
+} from '@nx-post/api/shared-data-access-mappings';
 import { DbConfig, dbConfig } from '@nx-post/api/utils-config';
 
 @Module({
@@ -29,7 +37,10 @@ import { DbConfig, dbConfig } from '@nx-post/api/utils-config';
       }),
     }),
     ApiFeatureConfigModule,
+    ApiFeatureUserModule,
     ApiFeaturePostModule,
+    ApiFeatureCommentModule,
   ],
+  providers: [BaseProfile, UserProfile, PostProfile, CommentProfile],
 })
 export class AppModule {}

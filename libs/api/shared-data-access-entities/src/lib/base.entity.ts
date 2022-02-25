@@ -1,17 +1,11 @@
 import { AutoMap } from '@automapper/classes';
-import {
-  OptionalProps,
-  PrimaryKey,
-  Property,
-  SerializedPrimaryKey,
-} from '@mikro-orm/core';
+import { PrimaryKey, Property, SerializedPrimaryKey } from '@mikro-orm/core';
 import { ObjectId } from '@mikro-orm/mongodb';
 
-export abstract class BaseEntity {
-  [OptionalProps]?: 'createdAt' | 'updatedAt';
-
+export class BaseEntity {
   @PrimaryKey()
   _id!: ObjectId;
+
   @SerializedPrimaryKey()
   @AutoMap()
   id!: string;

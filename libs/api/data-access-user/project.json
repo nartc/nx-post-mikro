@@ -1,0 +1,34 @@
+{
+  "root": "libs/api/data-access-user",
+  "sourceRoot": "libs/api/data-access-user/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/data-access-user",
+        "tsConfig": "libs/api/data-access-user/tsconfig.lib.json",
+        "packageJson": "libs/api/data-access-user/package.json",
+        "main": "libs/api/data-access-user/src/index.ts",
+        "assets": ["libs/api/data-access-user/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/data-access-user/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/data-access-user"],
+      "options": {
+        "jestConfig": "libs/api/data-access-user/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}

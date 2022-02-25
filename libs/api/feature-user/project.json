@@ -1,0 +1,34 @@
+{
+  "root": "libs/api/feature-user",
+  "sourceRoot": "libs/api/feature-user/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/feature-user",
+        "tsConfig": "libs/api/feature-user/tsconfig.lib.json",
+        "packageJson": "libs/api/feature-user/package.json",
+        "main": "libs/api/feature-user/src/index.ts",
+        "assets": ["libs/api/feature-user/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/feature-user/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/feature-user"],
+      "options": {
+        "jestConfig": "libs/api/feature-user/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}
