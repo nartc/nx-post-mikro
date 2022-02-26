@@ -1,0 +1,34 @@
+{
+  "root": "libs/api/data-access-security",
+  "sourceRoot": "libs/api/data-access-security/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/data-access-security",
+        "tsConfig": "libs/api/data-access-security/tsconfig.lib.json",
+        "packageJson": "libs/api/data-access-security/package.json",
+        "main": "libs/api/data-access-security/src/index.ts",
+        "assets": ["libs/api/data-access-security/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/data-access-security/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/data-access-security"],
+      "options": {
+        "jestConfig": "libs/api/data-access-security/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}

@@ -1,0 +1,34 @@
+{
+  "root": "libs/api/feature-security",
+  "sourceRoot": "libs/api/feature-security/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/feature-security",
+        "tsConfig": "libs/api/feature-security/tsconfig.lib.json",
+        "packageJson": "libs/api/feature-security/package.json",
+        "main": "libs/api/feature-security/src/index.ts",
+        "assets": ["libs/api/feature-security/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/feature-security/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/feature-security"],
+      "options": {
+        "jestConfig": "libs/api/feature-security/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}

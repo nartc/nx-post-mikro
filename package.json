@@ -3,16 +3,14 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "start:api": "nx serve api"
   },
   "private": true,
   "dependencies": {
-    "@automapper/classes": "7.3.1",
-    "@automapper/core": "7.3.1",
-    "@automapper/mikro": "7.3.1",
-    "@automapper/nestjs": "7.3.1",
+    "@automapper/classes": "7.3.10",
+    "@automapper/core": "7.3.10",
+    "@automapper/mikro": "7.3.10",
+    "@automapper/nestjs": "7.3.10",
     "@mikro-orm/core": "5.0.4",
     "@mikro-orm/mongodb": "5.0.4",
     "@mikro-orm/nestjs": "5.0.0",

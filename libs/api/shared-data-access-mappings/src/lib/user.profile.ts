@@ -25,7 +25,7 @@ export class UserProfile extends AutomapperProfile {
       mapper.createMap(UserEntity, UserInformationDto, {
         extends: [baseMapping],
       });
-      mapper.createMap(UserEntity, AuthUserDto);
+      mapper.createMap(UserEntity, AuthUserDto, { extends: [baseMapping] });
     };
   }
 }

@@ -7,6 +7,7 @@ import { ApiFeatureAuthModule } from '@nx-post/api/feature-auth';
 import { ApiFeatureCommentModule } from '@nx-post/api/feature-comment';
 import { ApiFeatureConfigModule } from '@nx-post/api/feature-config';
 import { ApiFeaturePostModule } from '@nx-post/api/feature-post';
+import { ApiFeatureSecurityModule } from '@nx-post/api/feature-security';
 import { ApiFeatureUserModule } from '@nx-post/api/feature-user';
 import {
   BaseProfile,
@@ -23,7 +24,7 @@ import { DbConfig, dbConfig } from '@nx-post/api/utils-config';
       options: [
         {
           name: 'mapper',
-          pluginInitializer: mikro,
+          pluginInitializer: mikro(),
           namingConventions: new CamelCaseNamingConvention(),
         },
       ],
@@ -42,6 +43,7 @@ import { DbConfig, dbConfig } from '@nx-post/api/utils-config';
     ApiFeatureUserModule,
     ApiFeaturePostModule,
     ApiFeatureCommentModule,
+    ApiFeatureSecurityModule,
   ],
   providers: [BaseProfile, UserProfile, PostProfile, CommentProfile],
 })

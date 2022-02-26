@@ -1,7 +1,8 @@
 import { AutoMap } from '@automapper/classes';
 import { UserRole } from '@nx-post/api/shared-data-access-entities';
+import { BaseDto } from '../base.dto';
 
-export class AuthUserDto {
+export class AuthUserDto extends BaseDto {
   @AutoMap()
   username!: string;
   @AutoMap()

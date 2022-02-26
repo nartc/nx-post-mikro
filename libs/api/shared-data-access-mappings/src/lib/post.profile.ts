@@ -1,4 +1,4 @@
-import { Mapper, MappingProfile } from '@automapper/core';
+import { mapFrom, Mapper, MappingProfile } from '@automapper/core';
 import { AutomapperProfile, InjectMapper } from '@automapper/nestjs';
 import { Injectable } from '@nestjs/common';
 import { BaseDto, PostDto } from '@nx-post/api/shared-data-access-dtos';
@@ -16,7 +16,16 @@ export class PostProfile extends AutomapperProfile {
   mapProfile(): MappingProfile {
     return (mapper) => {
       const baseMapping = mapper.getMapping(BaseEntity, BaseDto);
-      mapper.createMap(PostEntity, PostDto, { extends: [baseMapping] });
+      mapper
+        .createMap(PostEntity, PostDto, { extends: [baseMapping] })
+        .forMember(
+          (d) => d.commentsCount,
+          mapFrom((s) => s.comments.length)
+        )
+        .forMember(
+          (d) => d.likedByCount,
+          mapFrom((s) => s.likedBy.length)
+        );
     };
   }
 }

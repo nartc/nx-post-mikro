@@ -1,0 +1,34 @@
+{
+  "root": "libs/api/shared-utils-decorators",
+  "sourceRoot": "libs/api/shared-utils-decorators/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/shared-utils-decorators",
+        "tsConfig": "libs/api/shared-utils-decorators/tsconfig.lib.json",
+        "packageJson": "libs/api/shared-utils-decorators/package.json",
+        "main": "libs/api/shared-utils-decorators/src/index.ts",
+        "assets": ["libs/api/shared-utils-decorators/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/api/shared-utils-decorators/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api/shared-utils-decorators"],
+      "options": {
+        "jestConfig": "libs/api/shared-utils-decorators/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:api"]
+}

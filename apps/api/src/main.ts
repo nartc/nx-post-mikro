@@ -1,6 +1,7 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { HttpExceptionFilter } from '@nx-post/api-shared-utils-exception-filters';
 import { appConfig, AppConfig } from '@nx-post/api/utils-config';
 import * as compression from 'compression';
 import helmet from 'helmet';
@@ -35,6 +36,8 @@ async function bootstrap() {
       showRequestDuration: true,
     },
   });
+
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   await app.listen(config.port, () => {
     Logger.log(

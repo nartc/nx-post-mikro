@@ -1,4 +1,5 @@
 export * from './lib/base.dto';
+export * from './lib/api-exception.dto';
 export * from './lib/post/post.dto';
 export * from './lib/post/params/create-post-params.dto';
 export * from './lib/comment/comment.dto';
