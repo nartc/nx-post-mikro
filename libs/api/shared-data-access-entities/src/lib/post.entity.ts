@@ -1,5 +1,6 @@
 import { AutoMap } from '@automapper/classes';
 import {
+  Cascade,
   Collection,
   Entity,
   IdentifiedReference,
@@ -21,11 +22,13 @@ export class PostEntity extends BaseEntity {
   @AutoMap()
   text!: string;
 
-  @ManyToOne(() => UserEntity)
+  @ManyToOne(() => UserEntity, { wrappedReference: true })
   @AutoMap({ typeFn: () => UserEntity })
   author!: IdentifiedReference<UserEntity, '_id' | 'id'>;
 
-  @OneToMany(() => CommentEntity, (comment) => comment.post)
+  @OneToMany(() => CommentEntity, (comment) => comment.post, {
+    cascade: [Cascade.ALL],
+  })
   @AutoMap({ typeFn: () => CommentEntity })
   comments = new Collection<CommentEntity>(this);
 

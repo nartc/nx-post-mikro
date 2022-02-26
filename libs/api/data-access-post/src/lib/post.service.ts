@@ -68,7 +68,10 @@ export class PostService {
   }
 
   async deletePost(userId: string, postId: string): Promise<void> {
-    const post = await this.postRepository.findOneOrFail({ id: postId });
+    const post = await this.postRepository.findOneOrFail(
+      { id: postId },
+      { populate: ['comments'] }
+    );
 
     if (post == null) {
       throw new NotFoundException(postId, 'failed - no post');

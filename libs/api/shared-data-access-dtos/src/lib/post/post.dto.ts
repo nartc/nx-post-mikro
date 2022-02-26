@@ -17,7 +17,7 @@ export class PostDto extends BaseDto {
   @AutoMap({ typeFn: () => CommentDto })
   comments: CommentDto[] = [];
 
-  @ApiProperty()
+  @ApiProperty({ type: Number })
   @AutoMap({ typeFn: () => Number })
   commentsCount = 0;
 
@@ -25,7 +25,7 @@ export class PostDto extends BaseDto {
   @AutoMap({ typeFn: () => UserInformationDto })
   likedBy: UserInformationDto[] = [];
 
-  @ApiProperty()
+  @ApiProperty({ type: Number })
   @AutoMap({ typeFn: () => Number })
   likedByCount = 0;
 }

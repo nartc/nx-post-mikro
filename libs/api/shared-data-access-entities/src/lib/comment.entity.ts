@@ -1,10 +1,10 @@
 import { AutoMap } from '@automapper/classes';
 import {
   Entity,
+  IdentifiedReference,
   ManyToOne,
   OptionalProps,
   Property,
-  Reference,
 } from '@mikro-orm/core';
 import { BaseEntity } from './base.entity';
 import { PostEntity } from './post.entity';
@@ -18,11 +18,11 @@ export class CommentEntity extends BaseEntity {
   @AutoMap()
   text!: string;
 
-  @ManyToOne(() => UserEntity)
+  @ManyToOne(() => UserEntity, { wrappedReference: true })
   @AutoMap({ typeFn: () => UserEntity })
-  author!: Reference<UserEntity>;
+  author!: IdentifiedReference<UserEntity, '_id' | 'id'>;
 
-  @ManyToOne(() => PostEntity)
+  @ManyToOne(() => PostEntity, { wrappedReference: true })
   @AutoMap({ typeFn: () => PostEntity })
-  post!: Reference<PostEntity>;
+  post!: IdentifiedReference<PostEntity, '_id' | 'id'>;
 }
