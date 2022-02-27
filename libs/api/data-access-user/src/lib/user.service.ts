@@ -28,8 +28,12 @@ export class UserService {
   }
 
   async create(dto: RegisterParamsDto): Promise<UserEntity> {
-    const newUser = await this.userRepository.create(dto);
-    await this.userRepository.persistAndFlush(newUser);
-    return newUser;
+    try {
+      const newUser = await this.userRepository.create(dto);
+      await this.userRepository.persistAndFlush(newUser);
+      return newUser;
+    } catch (e) {
+      throw new InternalServerErrorException(e, 'failed - create user');
+    }
   }
 }
