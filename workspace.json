@@ -18,7 +18,6 @@
     "api-shared-data-access-mappings": "libs/api/shared-data-access-mappings",
     "api-shared-utils-decorators": "libs/api/shared-utils-decorators",
     "api-shared-utils-exception-filters": "libs/api/shared-utils-exception-filters",
-    "api-utils-config": "libs/api/utils-config",
-    "web": "apps/web"
+    "api-utils-config": "libs/api/utils-config"
   }
 }
