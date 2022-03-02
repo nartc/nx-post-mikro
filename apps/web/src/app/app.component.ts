@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ct-root',
-  template: `<button pButton type="button" label="Click"></button>`,
-  styles: [],
+  template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {
-  title = 'web';
-}
+export class AppComponent {}

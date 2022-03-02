@@ -53,7 +53,12 @@
       "@nx-post/api/shared-utils-decorators": [
         "libs/api/shared-utils-decorators/src/index.ts"
       ],
-      "@nx-post/api/utils-config": ["libs/api/utils-config/src/index.ts"]
+      "@nx-post/api/utils-config": ["libs/api/utils-config/src/index.ts"],
+      "@nx-post/web/feature-login": ["libs/web/feature-login/src/index.ts"],
+      "@nx-post/web/feature-register": [
+        "libs/web/feature-register/src/index.ts"
+      ],
+      "@nx-post/web/feature-shell": ["libs/web/feature-shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

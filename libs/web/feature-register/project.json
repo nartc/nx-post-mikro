@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/web/feature-register",
+  "sourceRoot": "libs/web/feature-register/src",
+  "prefix": "ct",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/web/feature-register"],
+      "options": {
+        "project": "libs/web/feature-register/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/feature-register/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/feature-register/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/feature-register"],
+      "options": {
+        "jestConfig": "libs/web/feature-register/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/web/feature-register/src/**/*.ts",
+          "libs/web/feature-register/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:web"]
+}
