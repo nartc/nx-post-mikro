@@ -31,6 +31,7 @@
     "@nestjs/passport": "8.2.1",
     "@nestjs/platform-express": "~8.3.1",
     "@nestjs/swagger": "5.2.0",
+    "@ngrx/component-store": "13.0.2",
     "bcrypt": "5.0.1",
     "compression": "1.7.4",
     "helmet": "5.0.2",
