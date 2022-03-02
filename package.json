@@ -35,6 +35,8 @@
     "helmet": "5.0.2",
     "passport": "0.5.2",
     "passport-jwt": "4.0.0",
+    "primeicons": "5.0.0",
+    "primeng": "13.2.1",
     "reflect-metadata": "~0.1.13",
     "rxjs": "~7.5.4",
     "swagger-ui-express": "4.3.0",

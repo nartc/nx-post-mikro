@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ct-root',
-  template: ` <ct-nx-welcome></ct-nx-welcome> `,
+  template: `<button pButton type="button" label="Click"></button>`,
   styles: [],
 })
 export class AppComponent {
