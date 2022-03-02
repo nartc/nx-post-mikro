@@ -58,7 +58,10 @@
       "@nx-post/web/feature-register": [
         "libs/web/feature-register/src/index.ts"
       ],
-      "@nx-post/web/feature-shell": ["libs/web/feature-shell/src/index.ts"]
+      "@nx-post/web/feature-shell": ["libs/web/feature-shell/src/index.ts"],
+      "@nx-post/web/shared-data-access-api-sdk": [
+        "libs/web/shared-data-access-api-sdk/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

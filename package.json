@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start:api": "nx serve api",
-    "postinstall": "ngcc --properties es2015 browser module main"
+    "postinstall": "ngcc --properties es2015 browser module main",
+    "gen:api": "openapi-generator-cli generate -i http://localhost:3333/api/docs-json -g typescript-angular -o libs/web/shared-data-access-api-sdk/src/lib -c openapi-generator-ts-angular.config.json"
   },
   "private": true,
   "dependencies": {
@@ -64,6 +65,7 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "13.8.3",
     "@nrwl/workspace": "13.8.3",
+    "@openapitools/openapi-generator-cli": "2.4.26",
     "@types/bcrypt": "5.0.0",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",

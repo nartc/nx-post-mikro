@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "root": "libs/web/shared-data-access-api-sdk",
+  "sourceRoot": "libs/web/shared-data-access-api-sdk/src",
+  "prefix": "ct",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/web/shared-data-access-api-sdk"],
+      "options": {
+        "project": "libs/web/shared-data-access-api-sdk/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/shared-data-access-api-sdk/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/shared-data-access-api-sdk/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  },
+  "tags": ["scope:web"]
+}
