@@ -55,12 +55,17 @@
       ],
       "@nx-post/api/utils-config": ["libs/api/utils-config/src/index.ts"],
       "@nx-post/web/feature-login": ["libs/web/feature-login/src/index.ts"],
+      "@nx-post/web/feature-post": ["libs/web/feature-post/src/index.ts"],
+      "@nx-post/web/feature-posts": ["libs/web/feature-posts/src/index.ts"],
       "@nx-post/web/feature-register": [
         "libs/web/feature-register/src/index.ts"
       ],
       "@nx-post/web/feature-shell": ["libs/web/feature-shell/src/index.ts"],
       "@nx-post/web/shared-data-access-api-sdk": [
         "libs/web/shared-data-access-api-sdk/src/index.ts"
+      ],
+      "@nx-post/web/shared-data-access-auth": [
+        "libs/web/shared-data-access-auth/src/index.ts"
       ]
     }
   },

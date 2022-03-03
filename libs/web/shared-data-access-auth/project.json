@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/web/shared-data-access-auth",
+  "sourceRoot": "libs/web/shared-data-access-auth/src",
+  "prefix": "ct",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/web/shared-data-access-auth"],
+      "options": {
+        "project": "libs/web/shared-data-access-auth/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/shared-data-access-auth/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/shared-data-access-auth/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/shared-data-access-auth"],
+      "options": {
+        "jestConfig": "libs/web/shared-data-access-auth/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/web/shared-data-access-auth/src/**/*.ts",
+          "libs/web/shared-data-access-auth/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:web"]
+}

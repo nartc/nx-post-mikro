@@ -21,8 +21,11 @@
     "api-utils-config": "libs/api/utils-config",
     "web": "apps/web",
     "web-feature-login": "libs/web/feature-login",
+    "web-feature-post": "libs/web/feature-post",
+    "web-feature-posts": "libs/web/feature-posts",
     "web-feature-register": "libs/web/feature-register",
     "web-feature-shell": "libs/web/feature-shell",
-    "web-shared-data-access-api-sdk": "libs/web/shared-data-access-api-sdk"
+    "web-shared-data-access-api-sdk": "libs/web/shared-data-access-api-sdk",
+    "web-shared-data-access-auth": "libs/web/shared-data-access-auth"
   }
 }

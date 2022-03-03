@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/web/feature-post",
+  "sourceRoot": "libs/web/feature-post/src",
+  "prefix": "ct",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/web/feature-post"],
+      "options": {
+        "project": "libs/web/feature-post/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/feature-post/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/feature-post/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/feature-post"],
+      "options": {
+        "jestConfig": "libs/web/feature-post/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/web/feature-post/src/**/*.ts",
+          "libs/web/feature-post/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:web"]
+}
