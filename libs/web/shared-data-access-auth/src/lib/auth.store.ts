@@ -32,7 +32,6 @@ export class AuthStore extends ComponentStore<AuthState> {
   );
 
   init() {
-    this.storeLocal(this.state$);
     const token = localStorage.getItem('@@nx_post_token') || '';
     if (token) {
       const stringifiedUser = localStorage.getItem('@@nx_post_user');
@@ -41,7 +40,9 @@ export class AuthStore extends ComponentStore<AuthState> {
         user: stringifiedUser ? JSON.parse(stringifiedUser) : undefined,
       });
     } else {
-      this.setState({});
+      this.setState({ token: '' });
     }
+
+    this.storeLocal(this.state$);
   }
 }
