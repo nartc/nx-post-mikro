@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/web/ui-post-item",
+  "sourceRoot": "libs/web/ui-post-item/src",
+  "prefix": "ct",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/web/ui-post-item"],
+      "options": {
+        "project": "libs/web/ui-post-item/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/ui-post-item/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/ui-post-item/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/ui-post-item"],
+      "options": {
+        "jestConfig": "libs/web/ui-post-item/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/web/ui-post-item/src/**/*.ts",
+          "libs/web/ui-post-item/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:web"]
+}

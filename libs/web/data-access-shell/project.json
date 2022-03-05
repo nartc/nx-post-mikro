@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/web/data-access-shell",
+  "sourceRoot": "libs/web/data-access-shell/src",
+  "prefix": "ct",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/web/data-access-shell"],
+      "options": {
+        "project": "libs/web/data-access-shell/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/data-access-shell/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/data-access-shell/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/data-access-shell"],
+      "options": {
+        "jestConfig": "libs/web/data-access-shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/web/data-access-shell/src/**/*.ts",
+          "libs/web/data-access-shell/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:web"]
+}

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentStore } from '@ngrx/component-store';
-import { LayoutMessageService } from '@nx-post/web/feature-shell';
+import { LayoutMessageService } from '@nx-post/web/data-access-shell';
 import {
   ApiExceptionDto,
   LoginParamsDto,

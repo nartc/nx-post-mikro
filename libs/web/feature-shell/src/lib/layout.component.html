@@ -1,0 +1,32 @@
+<p-toast position="bottom-right"></p-toast>
+<ng-container *ngIf="vm$ | async as vm">
+  <p-menubar [model]="vm.menuItems">
+    <ng-container *ngIf="vm.displayName">
+      <ng-template pTemplate="start">
+        <a class="no-underline text-inherit" routerLink="/">
+          <div
+            class="flex align-items-center hover:bg-black-alpha-10 cursor-pointer border-round"
+          >
+            <div
+              class="flex align-items-center justify-content-center w-3rem h-3rem border-2 border-300 border-circle"
+            >
+              <img
+                *ngIf="!vm.avatar; else noAvatar"
+                [src]="vm.avatar"
+                alt="Avatar of User"
+                class="w-12 h-12 border-circle"
+              />
+              <ng-template #noAvatar>
+                <i class="pi pi-user"></i>
+              </ng-template>
+            </div>
+            <span class="mx-2">{{ vm.displayName }}</span>
+          </div>
+        </a>
+      </ng-template>
+    </ng-container>
+  </p-menubar>
+  <div class="p-4">
+    <router-outlet></router-outlet>
+  </div>
+</ng-container>

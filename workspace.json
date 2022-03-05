@@ -20,12 +20,16 @@
     "api-shared-utils-exception-filters": "libs/api/shared-utils-exception-filters",
     "api-utils-config": "libs/api/utils-config",
     "web": "apps/web",
+    "web-data-access-shell": "libs/web/data-access-shell",
     "web-feature-login": "libs/web/feature-login",
     "web-feature-post": "libs/web/feature-post",
     "web-feature-posts": "libs/web/feature-posts",
     "web-feature-register": "libs/web/feature-register",
     "web-feature-shell": "libs/web/feature-shell",
     "web-shared-data-access-api-sdk": "libs/web/shared-data-access-api-sdk",
-    "web-shared-data-access-auth": "libs/web/shared-data-access-auth"
+    "web-shared-data-access-auth": "libs/web/shared-data-access-auth",
+    "web-shared-ui-avatar": "libs/web/shared-ui-avatar",
+    "web-ui-post-input": "libs/web/ui-post-input",
+    "web-ui-post-item": "libs/web/ui-post-item"
   }
 }

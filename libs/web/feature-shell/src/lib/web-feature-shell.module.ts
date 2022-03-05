@@ -2,7 +2,10 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthGuard } from '@nx-post/web/shared-data-access-auth';
+import {
+  AuthGuard,
+  authInterceptorProvider,
+} from '@nx-post/web/shared-data-access-auth';
 import { LayoutComponent, LayoutComponentModule } from './layout.component';
 
 @NgModule({
@@ -43,6 +46,7 @@ import { LayoutComponent, LayoutComponentModule } from './layout.component';
       },
     ]),
   ],
+  providers: [authInterceptorProvider],
   exports: [RouterModule],
 })
 export class WebFeatureShellModule {}

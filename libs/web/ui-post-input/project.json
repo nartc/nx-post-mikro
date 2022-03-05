@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/web/ui-post-input",
+  "sourceRoot": "libs/web/ui-post-input/src",
+  "prefix": "ct",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/web/ui-post-input"],
+      "options": {
+        "project": "libs/web/ui-post-input/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/ui-post-input/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/ui-post-input/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/ui-post-input"],
+      "options": {
+        "jestConfig": "libs/web/ui-post-input/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/web/ui-post-input/src/**/*.ts",
+          "libs/web/ui-post-input/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:web"]
+}
