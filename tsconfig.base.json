@@ -73,6 +73,9 @@
       "@nx-post/web/shared-ui-avatar": [
         "libs/web/shared-ui-avatar/src/index.ts"
       ],
+      "@nx-post/web/ui-post-comments": [
+        "libs/web/ui-post-comments/src/index.ts"
+      ],
       "@nx-post/web/ui-post-input": ["libs/web/ui-post-input/src/index.ts"],
       "@nx-post/web/ui-post-item": ["libs/web/ui-post-item/src/index.ts"]
     }

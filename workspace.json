@@ -29,6 +29,7 @@
     "web-shared-data-access-api-sdk": "libs/web/shared-data-access-api-sdk",
     "web-shared-data-access-auth": "libs/web/shared-data-access-auth",
     "web-shared-ui-avatar": "libs/web/shared-ui-avatar",
+    "web-ui-post-comments": "libs/web/ui-post-comments",
     "web-ui-post-input": "libs/web/ui-post-input",
     "web-ui-post-item": "libs/web/ui-post-item"
   }

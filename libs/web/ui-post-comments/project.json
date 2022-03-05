@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/web/ui-post-comments",
+  "sourceRoot": "libs/web/ui-post-comments/src",
+  "prefix": "ct",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/web/ui-post-comments"],
+      "options": {
+        "project": "libs/web/ui-post-comments/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/web/ui-post-comments/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/web/ui-post-comments/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/web/ui-post-comments"],
+      "options": {
+        "jestConfig": "libs/web/ui-post-comments/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/web/ui-post-comments/src/**/*.ts",
+          "libs/web/ui-post-comments/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:web"]
+}

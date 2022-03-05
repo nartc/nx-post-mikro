@@ -11,7 +11,7 @@ const initialMenuItems = [
 
 @Injectable()
 export class LayoutStore extends ComponentStore<{ menuItems: MenuItem[] }> {
-  readonly menuItems$ = this.select((s) => s.menuItems, { debounce: true });
+  readonly menuItems$ = this.select((s) => s.menuItems);
 
   readonly vm$: Observable<{
     menuItems: MenuItem[];
@@ -24,7 +24,8 @@ export class LayoutStore extends ComponentStore<{ menuItems: MenuItem[] }> {
       menuItems,
       avatar: user?.avatarUrl,
       displayName: user?.name || user?.username || '',
-    })
+    }),
+    { debounce: true }
   );
 
   constructor(private authStore: AuthStore) {
@@ -36,7 +37,17 @@ export class LayoutStore extends ComponentStore<{ menuItems: MenuItem[] }> {
   private readonly updateMenuItems = this.effect<boolean>(
     tap((isAuthenticated) => {
       if (isAuthenticated) {
-        this.patchState({ menuItems: [{ label: 'Posts' }] });
+        this.patchState({
+          menuItems: [
+            { label: 'Posts', routerLink: '/posts' },
+            {
+              label: 'Logout',
+              command: () => {
+                this.authStore.logout();
+              },
+            },
+          ],
+        });
       } else {
         this.patchState({ menuItems: initialMenuItems });
       }

@@ -16,7 +16,7 @@ import { PostsStore } from './posts.store';
     <ng-container *ngIf="vm$ | async as vm">
       <div class="grid">
         <div class="col-8 col-offset-2">
-          <ct-post-input (postSubmit)="onPostSubmit($event)"></ct-post-input>
+          <ct-post-input (inputSubmit)="onPostSubmit($event)"></ct-post-input>
           <p-dataView [value]="vm.posts" layout="list">
             <ng-template pTemplate="listItem" let-post>
               <ct-post-item

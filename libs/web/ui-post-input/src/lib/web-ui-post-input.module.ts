@@ -22,7 +22,7 @@ import { RippleModule } from 'primeng/ripple';
             class="w-12"
             id="input"
             [autoResize]="true"
-            [(ngModel)]="newPost"
+            [(ngModel)]="text"
           ></textarea>
           <label for="input">Say something...</label>
         </span>
@@ -48,15 +48,15 @@ import { RippleModule } from 'primeng/ripple';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostInputComponent {
-  newPost = '';
+  text = '';
 
-  @Output() postSubmit = new EventEmitter<string>();
+  @Output() inputSubmit = new EventEmitter<string>();
 
   onSubmit() {
-    if (!this.newPost) return;
+    if (!this.text) return;
 
-    this.postSubmit.emit(this.newPost);
-    this.newPost = '';
+    this.inputSubmit.emit(this.text);
+    this.text = '';
   }
 }
 

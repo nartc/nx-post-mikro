@@ -18,20 +18,21 @@ import { LayoutStore } from './layout.store';
   template: `
     <p-toast position="bottom-right"></p-toast>
     <ng-container *ngIf="vm$ | async as vm">
-      <p-menubar [model]="vm.menuItems">
-        <ng-container *ngIf="vm.displayName">
-          <ng-template pTemplate="start">
-            <a class="no-underline text-inherit" routerLink="/">
-              <div
-                class="flex align-items-center hover:bg-black-alpha-10 cursor-pointer border-round"
-              >
-                <ct-avatar [avatar]="vm.avatar"></ct-avatar>
-                <span class="mx-2">{{ vm.displayName }}</span>
-              </div>
-            </a>
-          </ng-template>
-        </ng-container>
+      <p-menubar *ngIf="vm.displayName; else noAuth" [model]="vm.menuItems">
+        <ng-template pTemplate="start">
+          <a class="no-underline text-inherit" routerLink="/">
+            <div
+              class="flex align-items-center hover:bg-black-alpha-10 cursor-pointer border-round"
+            >
+              <ct-avatar [avatar]="vm.avatar"></ct-avatar>
+              <span class="mx-2">{{ vm.displayName }}</span>
+            </div>
+          </a>
+        </ng-template>
       </p-menubar>
+      <ng-template #noAuth>
+        <p-menubar [model]="vm.menuItems"></p-menubar>
+      </ng-template>
       <div class="p-4">
         <router-outlet></router-outlet>
       </div>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { ComponentStore } from '@ngrx/component-store';
 import { UserInformationDto } from '@nx-post/web/shared-data-access-api-sdk';
 import { filter, tap } from 'rxjs';
@@ -16,18 +17,26 @@ export class AuthStore extends ComponentStore<AuthState> {
   readonly user$ = this.select((s) => s.user);
   readonly isAuthenticated$ = this.select(this.token$, (token) => !!token);
 
-  constructor() {
+  constructor(private router: Router) {
     super({});
   }
 
   private readonly storeLocal = this.effect<AuthState>(
     tap(({ user, token }) => {
       if (!token) {
-        localStorage.clear();
+        localStorage.removeItem('@@nx_post_token');
+        localStorage.removeItem('@@nx_post_user');
       } else {
         localStorage.setItem('@@nx_post_token', token);
         localStorage.setItem('@@nx_post_user', JSON.stringify(user));
       }
+    })
+  );
+
+  readonly logout = this.effect<void>(
+    tap(() => {
+      this.setState({ token: '' });
+      void this.router.navigate(['/login']);
     })
   );
 

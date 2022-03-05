@@ -52,7 +52,7 @@ export class PostService {
   async findPostDetail(id: string): Promise<PostDto> {
     const post = await this.postRepository.findOneOrFail(
       { id },
-      { populate: ['author', 'comments', 'likedBy'] }
+      { populate: ['author', 'comments', 'comments.author', 'likedBy'] }
     );
 
     return this.mapper.map(post, PostDto, PostEntity);
