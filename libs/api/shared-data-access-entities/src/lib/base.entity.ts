@@ -17,10 +17,10 @@ export class BaseEntity {
   id!: string;
 
   @Property()
-  @AutoMap({ typeFn: () => Date })
+  @AutoMap(() => Date)
   createdAt = new Date();
 
   @Property({ onUpdate: () => new Date() })
-  @AutoMap({ typeFn: () => Date })
+  @AutoMap(() => Date)
   updatedAt = new Date();
 }

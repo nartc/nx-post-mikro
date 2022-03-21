@@ -20,14 +20,8 @@ import { DbConfig, dbConfig } from '@nx-post/api/utils-config';
 @Module({
   imports: [
     AutomapperModule.forRoot({
-      singular: true,
-      options: [
-        {
-          name: 'mapper',
-          pluginInitializer: mikro(),
-          namingConventions: new CamelCaseNamingConvention(),
-        },
-      ],
+      strategyInitializer: mikro(),
+      namingConventions: new CamelCaseNamingConvention(),
     }),
     MikroOrmModule.forRootAsync({
       inject: [dbConfig.KEY],

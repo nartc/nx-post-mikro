@@ -35,7 +35,7 @@ export class CommentService {
         populate: ['author'],
       }
     );
-    return this.mapper.mapArray(comments, CommentDto, CommentEntity);
+    return this.mapper.mapArray(comments, CommentEntity, CommentDto);
   }
 
   async getComment(commentId: string): Promise<CommentDto> {
@@ -45,7 +45,7 @@ export class CommentService {
       },
       { populate: ['author', 'post'] }
     );
-    return this.mapper.map(comment, CommentDto, CommentEntity);
+    return this.mapper.map(comment, CommentEntity, CommentDto);
   }
 
   async createComment(
@@ -59,7 +59,7 @@ export class CommentService {
     });
     await this.commentRepository.persistAndFlush(newComment);
     await wrap(newComment.post).init();
-    return this.mapper.map(newComment, CommentDto, CommentEntity);
+    return this.mapper.map(newComment, CommentEntity, CommentDto);
   }
 
   async deleteComment(userId: string, commentId: string): Promise<void> {

@@ -19,10 +19,10 @@ export class CommentEntity extends BaseEntity {
   text!: string;
 
   @ManyToOne(() => UserEntity, { wrappedReference: true })
-  @AutoMap({ typeFn: () => UserEntity })
+  @AutoMap(() => UserEntity)
   author!: IdentifiedReference<UserEntity, '_id' | 'id'>;
 
   @ManyToOne(() => PostEntity, { wrappedReference: true })
-  @AutoMap({ typeFn: () => PostEntity })
+  @AutoMap(() => PostEntity)
   post!: IdentifiedReference<PostEntity, '_id' | 'id'>;
 }

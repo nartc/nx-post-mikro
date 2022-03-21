@@ -1,4 +1,4 @@
-import { Mapper, MappingProfile } from '@automapper/core';
+import { createMap, Mapper, MappingProfile } from '@automapper/core';
 import { AutomapperProfile, InjectMapper } from '@automapper/nestjs';
 import { Injectable } from '@nestjs/common';
 import { BaseDto } from '@nx-post/api/shared-data-access-dtos';
@@ -10,9 +10,9 @@ export class BaseProfile extends AutomapperProfile {
     super(mapper);
   }
 
-  mapProfile(): MappingProfile {
+  get profile(): MappingProfile {
     return (mapper) => {
-      mapper.createMap(BaseEntity, BaseDto);
+      createMap(mapper, BaseEntity, BaseDto);
     };
   }
 }

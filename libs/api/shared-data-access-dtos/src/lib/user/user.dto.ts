@@ -15,7 +15,7 @@ export class UserDto extends BaseDto {
   email!: string;
 
   @ApiProperty({ enum: UserRole, enumName: 'UserRole' })
-  @AutoMap({ typeFn: () => String })
+  @AutoMap(() => String)
   role!: UserRole;
 
   @ApiProperty()
@@ -35,14 +35,14 @@ export class UserDto extends BaseDto {
   location?: string;
 
   @ApiProperty({ type: () => PostDto, isArray: true })
-  @AutoMap({ typeFn: () => PostDto })
+  @AutoMap(() => [PostDto])
   posts: PostDto[] = [];
 
   @ApiProperty({ type: () => PostDto, isArray: true })
-  @AutoMap({ typeFn: () => PostDto })
+  @AutoMap(() => [PostDto])
   liked: PostDto[] = [];
 
   @ApiProperty({ type: () => CommentDto, isArray: true })
-  @AutoMap({ typeFn: () => CommentDto })
+  @AutoMap(() => [CommentDto])
   comments: CommentDto[] = [];
 }

@@ -34,7 +34,7 @@ export class PostService {
       populate: ['author', 'comments', 'likedBy'],
     });
 
-    return this.mapper.mapArray(posts, PostDto, PostEntity);
+    return this.mapper.mapArray(posts, PostEntity, PostDto);
   }
 
   async findPostByUser(userId: string): Promise<PostDto[]> {
@@ -46,7 +46,7 @@ export class PostService {
         populate: ['author', 'comments', 'likedBy'],
       }
     );
-    return this.mapper.mapArray(postsByUser, PostDto, PostEntity);
+    return this.mapper.mapArray(postsByUser, PostEntity, PostDto);
   }
 
   async findPostDetail(id: string): Promise<PostDto> {
@@ -55,7 +55,7 @@ export class PostService {
       { populate: ['author', 'comments', 'comments.author', 'likedBy'] }
     );
 
-    return this.mapper.map(post, PostDto, PostEntity);
+    return this.mapper.map(post, PostEntity, PostDto);
   }
 
   async createPost(userId: string, dto: CreatePostParamsDto): Promise<PostDto> {
@@ -64,7 +64,7 @@ export class PostService {
       author: Reference.createFromPK(UserEntity, userId),
     });
     await this.postRepository.persistAndFlush(newPost);
-    return this.mapper.map(newPost, PostDto, PostEntity);
+    return this.mapper.map(newPost, PostEntity, PostDto);
   }
 
   async deletePost(userId: string, postId: string): Promise<void> {
@@ -105,7 +105,7 @@ export class PostService {
 
     post.likedBy.add(user);
     await this.postRepository.flush();
-    return this.mapper.map(post, PostDto, PostEntity);
+    return this.mapper.map(post, PostEntity, PostDto);
   }
 
   async unlike(userId: string, postId: string): Promise<PostDto> {
@@ -126,6 +126,6 @@ export class PostService {
 
     post.likedBy.remove(user);
     await this.postRepository.flush();
-    return this.mapper.map(post, PostDto, PostEntity);
+    return this.mapper.map(post, PostEntity, PostDto);
   }
 }

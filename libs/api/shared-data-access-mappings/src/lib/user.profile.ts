@@ -1,4 +1,10 @@
-import { Mapper, MappingProfile } from '@automapper/core';
+import {
+  createMap,
+  extend,
+  Mapper,
+  MappingConfiguration,
+  MappingProfile,
+} from '@automapper/core';
 import { AutomapperProfile, InjectMapper } from '@automapper/nestjs';
 import { Injectable } from '@nestjs/common';
 import {
@@ -18,14 +24,15 @@ export class UserProfile extends AutomapperProfile {
     super(mapper);
   }
 
-  mapProfile(): MappingProfile {
+  get profile(): MappingProfile {
     return (mapper) => {
-      const baseMapping = mapper.getMapping(BaseEntity, BaseDto);
-      mapper.createMap(UserEntity, UserDto, { extends: [baseMapping] });
-      mapper.createMap(UserEntity, UserInformationDto, {
-        extends: [baseMapping],
-      });
-      mapper.createMap(UserEntity, AuthUserDto, { extends: [baseMapping] });
+      createMap(mapper, UserEntity, UserDto);
+      createMap(mapper, UserEntity, UserInformationDto);
+      createMap(mapper, UserEntity, AuthUserDto);
     };
+  }
+
+  protected get mappingConfigurations(): MappingConfiguration[] {
+    return [extend(BaseEntity, BaseDto)];
   }
 }

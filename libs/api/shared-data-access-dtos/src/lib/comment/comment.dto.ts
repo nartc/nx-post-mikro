@@ -9,7 +9,7 @@ export class CommentDto extends BaseDto {
   text!: string;
 
   @ApiProperty({ type: () => UserInformationDto })
-  @AutoMap({ typeFn: () => UserInformationDto })
+  @AutoMap(() => UserInformationDto)
   author!: UserInformationDto;
 
   @ApiProperty()

@@ -14,7 +14,7 @@ import { ApiErrors } from '@nx-post/api/shared-utils-decorators';
 export class SecurityController {
   constructor(private securityService: SecurityService) {}
 
-  @Post('register')
+  @Post('register') // POST securities/register
   @ApiCreatedResponse()
   async register(@Body() dto: RegisterParamsDto): Promise<void> {
     return await this.securityService.register(dto);

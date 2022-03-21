@@ -10,22 +10,22 @@ export class PostDto extends BaseDto {
   text!: string;
 
   @ApiProperty({ type: () => UserInformationDto })
-  @AutoMap({ typeFn: () => UserInformationDto })
+  @AutoMap(() => UserInformationDto)
   author!: UserInformationDto;
 
   @ApiProperty({ type: () => CommentDto, isArray: true })
-  @AutoMap({ typeFn: () => CommentDto })
+  @AutoMap(() => [CommentDto])
   comments: CommentDto[] = [];
 
   @ApiProperty({ type: Number })
-  @AutoMap({ typeFn: () => Number })
+  @AutoMap(() => Number)
   commentsCount = 0;
 
   @ApiProperty({ type: () => UserInformationDto, isArray: true })
-  @AutoMap({ typeFn: () => UserInformationDto })
+  @AutoMap(() => [UserInformationDto])
   likedBy: UserInformationDto[] = [];
 
   @ApiProperty({ type: Number })
-  @AutoMap({ typeFn: () => Number })
+  @AutoMap(() => Number)
   likedByCount = 0;
 }

@@ -7,6 +7,6 @@ export class AuthUserDto extends BaseDto {
   username!: string;
   @AutoMap()
   email!: string;
-  @AutoMap({ typeFn: () => String })
+  @AutoMap(() => String)
   role!: UserRole;
 }

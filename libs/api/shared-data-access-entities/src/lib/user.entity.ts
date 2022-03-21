@@ -37,7 +37,7 @@ export class UserEntity extends BaseEntity {
 
   @Property()
   @Enum({ items: () => UserRole, default: UserRole.User })
-  @AutoMap({ typeFn: () => String })
+  @AutoMap(() => String)
   role = UserRole.User;
 
   @Property({ nullable: true })
@@ -57,14 +57,14 @@ export class UserEntity extends BaseEntity {
   location?: string;
 
   @OneToMany(() => PostEntity, (post) => post.author)
-  @AutoMap({ typeFn: () => PostEntity })
+  @AutoMap(() => [PostEntity])
   posts = new Collection<PostEntity>(this);
 
   @ManyToMany(() => PostEntity)
-  @AutoMap({ typeFn: () => PostEntity })
+  @AutoMap(() => [PostEntity])
   liked = new Collection<PostEntity>(this);
 
   @OneToMany(() => CommentEntity, (comment) => comment.author)
-  @AutoMap({ typeFn: () => CommentEntity })
+  @AutoMap(() => [CommentEntity])
   comments = new Collection<CommentEntity>(this);
 }

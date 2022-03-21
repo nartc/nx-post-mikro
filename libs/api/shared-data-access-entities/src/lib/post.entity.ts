@@ -23,16 +23,16 @@ export class PostEntity extends BaseEntity {
   text!: string;
 
   @ManyToOne(() => UserEntity, { wrappedReference: true })
-  @AutoMap({ typeFn: () => UserEntity })
+  @AutoMap(() => UserEntity)
   author!: IdentifiedReference<UserEntity, '_id' | 'id'>;
 
   @OneToMany(() => CommentEntity, (comment) => comment.post, {
     cascade: [Cascade.ALL],
   })
-  @AutoMap({ typeFn: () => CommentEntity })
+  @AutoMap(() => [CommentEntity])
   comments = new Collection<CommentEntity>(this);
 
   @ManyToMany(() => UserEntity, (user) => user.liked)
-  @AutoMap({ typeFn: () => UserEntity })
+  @AutoMap(() => [UserEntity])
   likedBy = new Collection<UserEntity>(this);
 }

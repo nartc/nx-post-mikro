@@ -28,7 +28,7 @@ export class AuthService {
       username: user.username,
       role: user.role,
     });
-    tokenResult.user = this.mapper.map(user, UserInformationDto, UserEntity);
+    tokenResult.user = this.mapper.map(user, UserEntity, UserInformationDto);
     return tokenResult;
   }
 
@@ -44,6 +44,6 @@ export class AuthService {
 
   async validateUser({ username }: JwtPayload): Promise<AuthUserDto> {
     const user = await this.userService.findByUsername(username);
-    return this.mapper.map(user, AuthUserDto, UserEntity);
+    return this.mapper.map(user, UserEntity, AuthUserDto);
   }
 }
