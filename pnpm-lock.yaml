@@ -17,10 +17,10 @@ specifiers:
   '@angular/platform-browser': ~13.2.5
   '@angular/platform-browser-dynamic': ~13.2.5
   '@angular/router': ~13.2.5
-  '@automapper/classes': ~8.0.1
-  '@automapper/core': ~8.0.1
-  '@automapper/mikro': ~8.0.1
-  '@automapper/nestjs': ~8.0.1
+  '@automapper/classes': ~8.1.0-beta.0
+  '@automapper/core': ~8.1.0-beta.0
+  '@automapper/mikro': ~8.1.0-beta.0
+  '@automapper/nestjs': ~8.1.0-beta.0
   '@mikro-orm/core': 5.0.5
   '@mikro-orm/mongodb': 5.0.5
   '@mikro-orm/nestjs': 5.0.0
@@ -89,10 +89,10 @@ dependencies:
   '@angular/platform-browser': 13.2.7_b78ed31d39db3a0743cc65f22f72226f
   '@angular/platform-browser-dynamic': 13.2.7_aa82ce30927f2b99723e23d9f57bdb1c
   '@angular/router': 13.2.7_57d78c2fd33647bdfd4b41ba21f3d17d
-  '@automapper/classes': 8.0.1_430dbb6fd89e4862e37a20963b4597a7
-  '@automapper/core': 8.0.1
-  '@automapper/mikro': 8.0.1_cd865f0057e3245a9db419066220515a
-  '@automapper/nestjs': 8.0.1_f07ee917e2312fa27a492396953740ed
+  '@automapper/classes': 8.1.0-beta.0_2ba101c3e69971d4185814e742cabf30
+  '@automapper/core': 8.1.0-beta.0
+  '@automapper/mikro': 8.1.0-beta.0_0a2239242e5d9a3d7a8041ee5e8aac13
+  '@automapper/nestjs': 8.1.0-beta.0_94d69d5617e5c4743d5b0021851a275c
   '@mikro-orm/core': 5.0.5_@mikro-orm+mongodb@5.0.5
   '@mikro-orm/mongodb': 5.0.5_@mikro-orm+core@5.0.5
   '@mikro-orm/nestjs': 5.0.0_e9cee3db776ff421089152a994e74f31
@@ -616,46 +616,46 @@ packages:
     resolution: {integrity: sha512-H71nDOOL8Y7kWRLqf6Sums+01Q5msqBW2KhDUTemh1tvY04eSkSXrK0uj/4mmY0Xr16/3zyZmsrxN7CKuRbNRg==}
     dev: true
 
-  /@automapper/classes/8.0.1_430dbb6fd89e4862e37a20963b4597a7:
-    resolution: {integrity: sha512-PgGdZwuA+LKxXda4chOMVSUzeZQZk8uMw6SIgb7Uz3f+JTkA4rlZc9EJdse8M4YlhO+Y0sJMbHgcPv1tRkIdJw==}
+  /@automapper/classes/8.1.0-beta.0_2ba101c3e69971d4185814e742cabf30:
+    resolution: {integrity: sha512-DygdfQkLwqRgyyyqMGYSd3we8LeOtG0jqzKvBgNOvLHiXRXpCFRKypv14jByDm2Cqtzugm/PF7mz0F0KUkOr/A==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      '@automapper/core': 8.0.1
+      '@automapper/core': 8.1.0-beta.0
       reflect-metadata: ~0.1.13
     dependencies:
-      '@automapper/core': 8.0.1
+      '@automapper/core': 8.1.0-beta.0
       reflect-metadata: 0.1.13
     dev: false
 
-  /@automapper/core/8.0.1:
-    resolution: {integrity: sha512-KdD44Kzq2NQ2cJgCC1EzuXyY8qD5omkImCp/QJTfmjl9Jewswz0lzP0nUr6OKXmcz9nrp6nxe5vPdfWa3Wb/EA==}
+  /@automapper/core/8.1.0-beta.0:
+    resolution: {integrity: sha512-5KoCxJFmr5Ic51K+N7VFk7+M/GFRFc6YuOTs+anvBQd65phxPcp7TGJitFY0zrfHHpoRmRwUf25mVcrDVI+Dhw==}
     engines: {node: '>=14.0.0'}
     dev: false
 
-  /@automapper/mikro/8.0.1_cd865f0057e3245a9db419066220515a:
-    resolution: {integrity: sha512-6ggPqmIDn1xCEv2Te/YddGstZZtlm0DQiLoyTMgK5aSXBvXnkcbtdxcnynXRDOV65fdUXCVeo8wYokJ0bv90oA==}
+  /@automapper/mikro/8.1.0-beta.0_0a2239242e5d9a3d7a8041ee5e8aac13:
+    resolution: {integrity: sha512-Lkp8XnCnLtuspl5v7s7R5bYyGgR6AuOhIbRkGcHIo5uRUd1iqKvJseql3zrTeFJqEAZaN/vRuNIYC9xJ//+fvQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      '@automapper/classes': 8.0.1
-      '@automapper/core': 8.0.1
+      '@automapper/classes': 8.1.0-beta.0
+      '@automapper/core': 8.1.0-beta.0
       '@mikro-orm/core': ^5.0.0
       reflect-metadata: ~0.1.13
     dependencies:
-      '@automapper/classes': 8.0.1_430dbb6fd89e4862e37a20963b4597a7
-      '@automapper/core': 8.0.1
+      '@automapper/classes': 8.1.0-beta.0_2ba101c3e69971d4185814e742cabf30
+      '@automapper/core': 8.1.0-beta.0
       '@mikro-orm/core': 5.0.5_@mikro-orm+mongodb@5.0.5
       reflect-metadata: 0.1.13
     dev: false
 
-  /@automapper/nestjs/8.0.1_f07ee917e2312fa27a492396953740ed:
-    resolution: {integrity: sha512-1Zh++U0akmzoFivkxmQisRkTEd8ZRUw8/BdrVgYnMb71Y+XO/jJ7RlfIS469gGokoRK+uDeU8Q3l9r72O7M9JQ==}
+  /@automapper/nestjs/8.1.0-beta.0_94d69d5617e5c4743d5b0021851a275c:
+    resolution: {integrity: sha512-fluC627UbEHTbLyC9TsN9sTaTYA70b9fckhKliGeu36xf36MVMPw8IGHfpXUZBpak6/aKtgglnqmCCviqtOkNA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      '@automapper/core': 8.0.1
+      '@automapper/core': 8.1.0-beta.0
       '@nestjs/common': ^7.0.0 || ^8.0.0
       '@nestjs/core': ^7.0.0 || ^8.0.0
     dependencies:
-      '@automapper/core': 8.0.1
+      '@automapper/core': 8.1.0-beta.0
       '@nestjs/common': 8.4.3_e7ea248743279784063e3708d703abc5
       '@nestjs/core': 8.4.3_c2aa74453c5108161d7d668927d51cc5
     dev: false
